@@ -12,10 +12,10 @@ static const unsigned int gappx     = 5;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int user_bh            = 2;        /* 2 is the default spacing around the bar's font */
+static const int user_bh            = 15;       /* 2 is the default spacing around the bar's font */
 static const char *fonts[]               = { 
-  "JetBrainsMono Nerd Font:size=13", 
-  "Font Awesome 6 Free Solid:size=13"
+  "JetBrainsMono Nerd Font:size=12", 
+  "Font Awesome 6 Free Solid:size=12"
 };
 static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=13";
 static const char col_gray1[]       = "#222222";
