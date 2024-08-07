@@ -25,7 +25,7 @@ static const char col_gray1[]       = "#242424";
 static const char col_gray2[]       = "#2a2a2a";
 static const char col_gray3[]       = "#c0bfbc";
 static const char col_gray4[]       = "#f6f5f4";
-static const char col_primary[]        = "#865e3c";
+static const char col_primary[]     = "#865e3c";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -113,13 +113,18 @@ static const Key keys[] = {
 	{ 0, 							XK_Print,  					spawn,  	   {.v = flameshot} },
 	{ 0,                            XK_Super_L,					spawn,          {.v = dmenucmd } },
 
-	// { 0,                            XF86XK_AudioMute,           spawn,          SHCMD("pactl set-sink-mute 0 toggle") },
-	// { 0,                            XF86XK_AudioLowerVolume,    spawn,          SHCMD("pactl set-sink-volume 0 -3%") },
-  	// { 0,                            XF86XK_AudioRaiseVolume,    spawn,          SHCMD("pactl set-sink-volume 0 +3%") },
+	{ 0,                            XF86XK_AudioMute,           spawn,          SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+3 dwmblocks") },
+	{ 0,                            XF86XK_AudioLowerVolume,    spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -3%; pkill -RTMIN+3 dwmblocks") },
+  	{ 0,                            XF86XK_AudioRaiseVolume,    spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +3%; pkill -RTMIN+3 dwmblocks") },
   	{ 0,                            XF86XK_MonBrightnessUp,     spawn,          SHCMD("xbacklight -inc 5; pkill -RTMIN+1 dwmblocks") },
  	{ 0,                            XF86XK_MonBrightnessDown,   spawn,          SHCMD("xbacklight -dec 5; pkill -RTMIN+1 dwmblocks") },
+
+    // to update layout in dwmblocks on rctrl
 	{ 0,                            XK_ISO_Next_Group,          spawn,          SHCMD("pkill -RTMIN+2 dwmblocks") },
-    //{ MODKEY,                       XK_Shift_L,                 spawn,          SHCMD("setxkbmap ru") },
+    // alt + shift
+    // { MODKEY,                       XK_Shift_L,                 spawn,          SHCMD("xkb-switch --next; pkill -RTMIN+2 dwmblocks") },
+    // shift + alt
+    { ShiftMask,                    0xffe9,                     spawn,          SHCMD("xkb-switch --next; pkill -RTMIN+2 dwmblocks") },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
