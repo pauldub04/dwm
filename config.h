@@ -14,9 +14,9 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 15;       /* 2 is the default spacing around the bar's font */
 static const char *fonts[]               = { 
-  "UbuntuMono:size=14",
+  //"UbuntuMono:size=14",
   //"InputMonoCondensed-Regular:size=12",
-  //"JetBrainsMono Nerd Font:size=12", 
+  "JetBrainsMono Nerd Font:size=13", 
   "NotoColorEmoji:pixelsize=16:antialias=true:autohint=true",
   "Font Awesome 6 Free Solid:size=12",
 };
@@ -25,7 +25,7 @@ static const char col_gray1[]       = "#242424";
 static const char col_gray2[]       = "#2a2a2a";
 static const char col_gray3[]       = "#c0bfbc";
 static const char col_gray4[]       = "#f6f5f4";
-static const char col_primary[]     = "#865e3c";
+static const char col_primary[]     = "#484848";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
