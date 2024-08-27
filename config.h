@@ -113,6 +113,8 @@ static const Key keys[] = {
 	{ 0, 							XK_Print,  					spawn,  	   {.v = flameshot} },
 	{ 0,                            XK_Super_L,					spawn,          {.v = dmenucmd } },
 
+	{ 0,                            XF86XK_AudioMicMute,        spawn,          SHCMD("pactl set-source-mute @DEFAULT_SOURCE@ toggle; pkill -RTMIN+4 dwmblocks") },
+
 	{ 0,                            XF86XK_AudioMute,           spawn,          SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+3 dwmblocks") },
 	{ 0,                            XF86XK_AudioLowerVolume,    spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -3%; pkill -RTMIN+3 dwmblocks") },
   	{ 0,                            XF86XK_AudioRaiseVolume,    spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +3%; pkill -RTMIN+3 dwmblocks") },
